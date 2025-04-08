@@ -16,17 +16,14 @@ function App() {
           trail
           orderString="botd > dpick > rigour > fang > lb & bgs > buckler > 99magic & 99ranged"
         />
-        <Row
-          lead
-          orderString="bbarkh & bbarkb & bbarkl > augury > mbook > torm"
-        />
+        <Row orderString="bbarkh & bbarkb & bbarkl > augury > mbook > torm" />
       </Section>
 
       <Section title="Secondary Upgrades">
         <Row trail orderString="bmoonh > olegs > feros > bclaws" />
-        <Row lead trail orderString="masorim > masorit > masorib" />
-        <Row lead trail orderString="vmask > vtop > vbottom" />
-        <Row lead orderString="bmoont > rancour > fg > prims " />
+        <Row trail orderString="masorim > masorit > masorib" />
+        <Row trail orderString="vmask > vtop > vbottom" />
+        <Row orderString="bmoont > rancour > fg > prims " />
       </Section>
     </>
   );
