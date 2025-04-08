@@ -11,7 +11,7 @@ export default function Row({
   const [parsed, width] = parseProg(orderString);
 
   return (
-    <div className="row">
+    <div className={`row ${trail ? "ml-[15px]" : "ml-auto"} mr-auto`}>
       <div
         className="icontainer flex flex-row items-center"
         style={{ width: width + (lead && trail ? 60 : lead || trail ? 30 : 0) }}
