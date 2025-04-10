@@ -1,4 +1,4 @@
-import { parseProg, formatItem } from "./utils/prog-parser";
+import { parseProg, formatItem } from "../utils/prog-parser";
 export default function Row({
   orderString,
   lead,
