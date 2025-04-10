@@ -16,19 +16,40 @@ function App() {
           trail
           orderString="botd > dpick > rigour > fang > lb & bgs > buckler "
         />
-        <Row orderString="bbarkt & bbarkb > anguish > augury > mbook > torm" />
+        <Row
+          trail
+          orderString="bbarkt & bbarkb > augury > mbook > anguish > torm > bmoonh"
+        />
+        <Row orderString="obsidianb > feros" />
       </Section>
 
       <Section title="Secondary Upgrades">
-        <Row trail orderString="bmoonh > obsidianb > feros > bclaws" />
-        <Row trail orderString="masorih > masorit > masorib" />
-        <Row trail orderString="virtush > virtust > virtusb" />
-        <Row trail orderString="bmoonb > rancour > fg > prims " />
-        <Row orderString="zcb"/>
+        <Row trail orderString="bclaws > masorih > masorit > masorib > vw" />
+        <Row
+          trail
+          orderString="virtush > virtusb > virtust > bmoonb > rancour"
+        />
+        <Row orderString="fg > prims > zcb" />
       </Section>
 
-      <Section title="Shadow Rebuild">
-        <Row orderString="shadow & zcb > ancestralh > ancestralb > ancestralt"/>
+      <Section
+        title="Shadow Rebuild"
+        description="Sell every secondary upgrade for Shadow if possible.\n
+        Sell items in green to buy the items below it."
+      >
+        <Row
+          trail
+          orderString="shadow > virtush > eternals > virtusb > virtust"
+        />
+        <Row
+          trail
+          orderString="bclaws > vw $ bclaws > magus > ancestralh $ virtush > ancestralb $ virtusb > ancestralt $ virtust"
+        />
+        <Row orderString="bmoonb > rancour > fg > prims > zcb" />
+      </Section>
+
+      <Section title="500+ 3-down upgrades" description="Skip this order if you do not intend on doing 500+ in the near future.">
+        <Row orderString="torvah"/>
       </Section>
     </>
   );
