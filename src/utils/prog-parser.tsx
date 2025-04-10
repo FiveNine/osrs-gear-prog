@@ -12,22 +12,49 @@ function parseProg(progString: string): [string[][], number] {
 }
 
 function formatItem(itemName: string, key: number, separator?: string) {
-  const splitItems = itemName.split("&").map((i) => i.trim());
+  const splitItems = itemName
+    .split("$")
+    .slice(0, 2)
+    .map((i) =>
+      i
+        .trim()
+        .split("&")
+        .map((j) => j.trim())
+    )
+    .reverse();
+
+  const itemPadCount = splitItems[0].length;
+  const sell = splitItems.length > 1;
+  /*
+  shadow & magus $ zcb & zvambs => [shadow & magus, zcb & zvambs] => [[shadow, magus], [zcb, zvambs]]
+  shadow $ magus & zcb $ zvambs => shadow, magus & zcb, zvambs
+  shadow & magus $ zcb => shadow & magus, zcb
+  shadow $ magus & zcb => shadow, magus & zcb
+  shadow $ zcb $ zvambs => shadow, zcb, zvambs
+*/
   const separatorImg =
     separator == "+" ? `${IMG_DIR}/plus.png` : `${IMG_DIR}/arr-right.png`;
   return (
     <Fragment key={key}>
       <div className="flex flex-col">
-        {splitItems.map((itemName, i) => (
-          <Fragment key={i}>
-            <div className="iblock">
-              <a href="https://google.com/">
-                <img src={`${IMG_DIR}/${itemName}.png`} />
-              </a>
-            </div>
-            <br className="block content-[''] mt-1" />
-          </Fragment>
-        ))}
+        {splitItems.map((itemGroup, i) =>
+          itemGroup.map((itemName, j) => (
+            <Fragment key={j}>
+              <div
+                className={`iblock bg-opacity-20 ${
+                  i == 1 && j == itemGroup.length - 1
+                    ? `mb-${13.5 * itemPadCount}`
+                    : ""
+                } ${sell && i == 0 ? "bg-[#168118]/50" : "bg-[#010101]/20"}`}
+              >
+                <a href="https://google.com/">
+                  <img src={`${IMG_DIR}/${itemName}.png`} />
+                </a>
+              </div>
+              <br className="block content-[''] mt-1" />
+            </Fragment>
+          ))
+        )}
       </div>
       {separator && (
         <div className="iseparator">

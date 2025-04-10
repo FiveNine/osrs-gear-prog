@@ -1,6 +1,6 @@
 import "./App.css";
 import Row from "./components/Row";
-import Section from "./Section";
+import Section from "./components/Section";
 
 function App() {
   return (
@@ -16,14 +16,19 @@ function App() {
           trail
           orderString="botd > dpick > rigour > fang > lb & bgs > buckler "
         />
-        <Row orderString="bbarkt & bbarkb > anguish > 99ranged > augury > mbook > torm > 99magic" />
+        <Row orderString="bbarkt & bbarkb > anguish > augury > mbook > torm" />
       </Section>
 
       <Section title="Secondary Upgrades">
         <Row trail orderString="bmoonh > obsidianb > feros > bclaws" />
         <Row trail orderString="masorih > masorit > masorib" />
         <Row trail orderString="virtush > virtust > virtusb" />
-        <Row orderString="bmoonb > rancour > fg > prims " />
+        <Row trail orderString="bmoonb > rancour > fg > prims " />
+        <Row orderString="zcb"/>
+      </Section>
+
+      <Section title="Shadow Rebuild">
+        <Row orderString="shadow & zcb > ancestralh > ancestralb > ancestralt"/>
       </Section>
     </>
   );
