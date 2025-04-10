@@ -23,9 +23,10 @@ function formatItem(itemName: string, key: number, separator?: string) {
     )
     .reverse();
 
-  /*
-  infernal - torvah $ fg > torvat
-  */
+  const overrideSeparator = splitItems
+    .flat(2)
+    .map((i) => i.includes("--"))
+    .reduce((state, j) => state || j);
 
   const sell = splitItems.length > 1;
 
@@ -33,7 +34,7 @@ function formatItem(itemName: string, key: number, separator?: string) {
     separator == "+" ? `${IMG_DIR}/plus.png` : `${IMG_DIR}/arr-right.png`;
   return (
     <Fragment key={key}>
-      <div className="flex flex-col">
+      <div className={`flex flex-col ${overrideSeparator ? "mr-[30px]" : ""}`}>
         {splitItems.map((itemGroup, i) =>
           itemGroup.map((itemName, j) => (
             <Fragment key={j}>
@@ -43,7 +44,7 @@ function formatItem(itemName: string, key: number, separator?: string) {
                 }`}
               >
                 <a href="https://google.com/">
-                  <img src={`${IMG_DIR}/${itemName}.png`} />
+                  <img src={`${IMG_DIR}/${itemName.replace("--", "")}.png`} />
                 </a>
               </div>
               <br className="block content-[''] mt-1" />
@@ -51,7 +52,7 @@ function formatItem(itemName: string, key: number, separator?: string) {
           ))
         )}
       </div>
-      {separator && (
+      {separator && !overrideSeparator && (
         <div className="iseparator">
           <img src={separatorImg} />
         </div>
