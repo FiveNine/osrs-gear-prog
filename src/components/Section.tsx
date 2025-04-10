@@ -16,7 +16,9 @@ export default function Section({
       <div className="textrow fs14 description">
         <span className="fs18 font-semibold">{title}</span>
         <br />
-        {description}
+        {description?.split("\\n").map((d) => (
+          <p>{d}</p>
+        ))}
       </div>
       <div className="container">{children}</div>
     </div>
