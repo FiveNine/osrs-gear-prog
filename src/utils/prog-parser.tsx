@@ -34,17 +34,31 @@ function formatItem(itemName: string, key: number, separator?: string) {
     separator == "+" ? `${IMG_DIR}/plus.png` : `${IMG_DIR}/arr-right.png`;
   return (
     <Fragment key={key}>
-      <div className={`flex flex-col ${overrideSeparator ? "mr-[30px]" : ""}`}>
+      <div
+        className={`flex flex-col ${
+          overrideSeparator && key > 0
+            ? "ml-[15px] mr-[15px]"
+            : overrideSeparator && key == 0
+            ? "mr-[15px]"
+            : ""
+        }`}
+      >
         {splitItems.map((itemGroup, i) =>
           itemGroup.map((itemName, j) => (
             <Fragment key={j}>
               <div
                 className={`iblock bg-opacity-20 ${
-                  sell && i == 0 ? "bg-[#168118]/50" : "bg-[#010101]/20"
+                  sell && i == 0
+                    ? "bg-[#B22222]/50"
+                    : itemName.includes("*")
+                    ? "bg-[#35c6d7]/50"
+                    : "bg-[#010101]/20"
                 }`}
               >
                 <a href="https://google.com/">
-                  <img src={`${IMG_DIR}/${itemName.replace("--", "")}.png`} />
+                  <img
+                    src={`${IMG_DIR}/${itemName.replace(/(--|\*)/g, "")}.png`}
+                  />
                 </a>
               </div>
               <br className="block content-[''] mt-1" />
