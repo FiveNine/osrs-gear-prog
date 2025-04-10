@@ -8,6 +8,7 @@ function App() {
       <div className="text-[24px] font-bold fcorange">
         Tombs of Amascut Gear Progression
       </div>
+      <span className="textrow">April 11 2025</span>
       <Section
         title="Core Upgrades"
         description="Start from the left and follow the order."
@@ -23,33 +24,50 @@ function App() {
         <Row orderString="obsidianb > feros" />
       </Section>
 
-      <Section title="Secondary Upgrades">
-        <Row trail orderString="bclaws > masorih > masorit > masorib > vw" />
+      <Section
+        title="Secondary Upgrades"
+        description="Sell items in red to buy the items below them.\n
+        Sell everything past the Virtus mask for the ZCB."
+      >
         <Row
           trail
-          orderString="virtush > virtusb > virtust > bmoonb > rancour"
+          orderString="bclaws > masorih > masorit > masorib > vw $ bclaws"
         />
-        <Row orderString="fg > prims > zcb" />
+        <Row
+          trail
+          orderString="virtush > virtusb $ bbarkb > virtust $ bbarkt > bmoonb > rancour"
+        />
+        <Row orderString="fg $ bmoonh > prims > zcb" />
       </Section>
 
       <Section
         title="Shadow Rebuild"
-        description="Sell every secondary upgrade for Shadow if possible.\n
-        Sell items in green to buy the items below it."
+        description="Sell every secondary upgrade for shadow if possible."
       >
         <Row
           trail
-          orderString="shadow > virtush > eternals > virtusb > virtust"
+          orderString="shadow > virtush > eternals > virtusb > virtust > bclaws"
         />
         <Row
           trail
-          orderString="bclaws > vw $ bclaws > magus > ancestralh $ virtush > ancestralb $ virtusb > ancestralt $ virtust"
+          orderString="vw $ bclaws > magus > ancestralh $ virtush > ancestralb $ virtusb > ancestralt $ virtust > avernic"
         />
         <Row orderString="bmoonb > rancour > fg > prims > zcb" />
       </Section>
 
-      <Section title="500+ 3-down upgrades" description="Skip this order if you do not intend on doing 500+ in the near future.">
-        <Row orderString="torvah"/>
+      <Section
+        title="500+ Invocation Level No-DDS 3-Down Upgrades"
+        description="Skip if you do not intend on doing 500+ in the near future.\n
+      We strongly recommend getting the infernal cape as it removes the need to buy some Torva pieces.\n
+      Items in blue are useful in OD raids only."
+      >
+        <Row orderString="infernal" />
+        <Row orderString="ultor* > rapier* > torvah $ fg > torvab $ bmoonb > torvat" />
+      </Section>
+
+      <Section title="Tertiary Upgrades" description="Do NOT sell shadow/ancestral pieces for any of these items, including the twisted bow.\n
+      Sell Torva platebody/platelegs for the twisted bow if owned prior.">
+        <Row orderString="torvah $ fg > tbow > torvab $ bmoonb > torvat > zvambs" />
       </Section>
     </>
   );
