@@ -23,15 +23,12 @@ function formatItem(itemName: string, key: number, separator?: string) {
     )
     .reverse();
 
-  const itemPadCount = splitItems[0].length;
-  const sell = splitItems.length > 1;
   /*
-  shadow & magus $ zcb & zvambs => [shadow & magus, zcb & zvambs] => [[shadow, magus], [zcb, zvambs]]
-  shadow $ magus & zcb $ zvambs => shadow, magus & zcb, zvambs
-  shadow & magus $ zcb => shadow & magus, zcb
-  shadow $ magus & zcb => shadow, magus & zcb
-  shadow $ zcb $ zvambs => shadow, zcb, zvambs
-*/
+  infernal - torvah $ fg > torvat
+  */
+
+  const sell = splitItems.length > 1;
+
   const separatorImg =
     separator == "+" ? `${IMG_DIR}/plus.png` : `${IMG_DIR}/arr-right.png`;
   return (
@@ -42,10 +39,8 @@ function formatItem(itemName: string, key: number, separator?: string) {
             <Fragment key={j}>
               <div
                 className={`iblock bg-opacity-20 ${
-                  i == 1 && j == itemGroup.length - 1
-                    ? `mb-${13.5 * itemPadCount}`
-                    : ""
-                } ${sell && i == 0 ? "bg-[#168118]/50" : "bg-[#010101]/20"}`}
+                  sell && i == 0 ? "bg-[#168118]/50" : "bg-[#010101]/20"
+                }`}
               >
                 <a href="https://google.com/">
                   <img src={`${IMG_DIR}/${itemName}.png`} />
