@@ -35,9 +35,9 @@ function App() {
         />
         <Row
           trail
-          orderString="virtush > virtusb $ bbarkb > virtust $ bbarkt > bmoonb > rancour"
+          orderString="virtush > virtusb $ bbarkb > virtust $ bbarkt > bmoonb > torture"
         />
-        <Row orderString="fg $ bmoonh > prims > zcb" />
+        <Row orderString="rancour $ torture > fg $ bmoonh > prims > zcb" />
       </Section>
 
       <Section
@@ -50,9 +50,9 @@ function App() {
         />
         <Row
           trail
-          orderString="vw $ bclaws > magus > ancestralh $ virtush > ancestralb $ virtusb > ancestralt $ virtust > avernic"
+          orderString="vw $ bclaws > magus > ancestralh $ virtush > ancestralb $ virtusb > ancestralt $ virtust > bmoonb"
         />
-        <Row orderString="bmoonb > rancour > fg > prims > zcb" />
+        <Row orderString="torture > rancour $ torture > fg > prims > avernic > zcb" />
       </Section>
 
       <Section
@@ -65,10 +65,17 @@ function App() {
         <Row orderString="ultor* > rapier* > torvah $ fg > torvab $ bmoonb > torvat" />
       </Section>
 
-      <Section title="Tertiary Upgrades" description="Do NOT sell shadow/ancestral pieces for any of these items, including the twisted bow.\n
-      Sell Torva platebody/platelegs for the twisted bow if owned prior.">
-        <Row orderString="torvah $ fg > tbow > torvab $ bmoonb > torvat > zvambs" />
+      <Section
+        title="Tertiary Upgrades"
+        description="Do NOT sell shadow/ancestral pieces for any of these items, including the twisted bow."
+      >
+        <Row orderString="torvah $ fg > tbow $ torvat & torvab > torvab $ bmoonb > torvat > zvambs" />
       </Section>
+
+      <Section
+        title=""
+        description="Note: Bow of Faerdhinen setups are inferior to Masori + DCB setups.\nThey should only be used by irons or temporarily while obtaining cape upgrades."
+      />
     </>
   );
 }

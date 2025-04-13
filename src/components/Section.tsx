@@ -1,7 +1,7 @@
 import React from "react";
 
 type SectionProps = {
-  children: React.ReactNode[] | React.ReactNode;
+  children?: React.ReactNode[] | React.ReactNode;
   title: string;
   description?: string;
 };
