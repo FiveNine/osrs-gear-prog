@@ -1,54 +1,63 @@
-# React + TypeScript + Vite
+# OSRS Gear Prog Maker
+## Usage
+### Formatting
+There are only two React elements used in this: `Section` and `Row`:
+```ts
+function Section({
+  children,
+  title,
+  description,
+}: SectionProps)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+type SectionProps = {
+  children?: React.ReactNode[] | React.ReactNode;
+  title: string;
+  description?: string;
+};
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
+```ts
+function Row({
+  orderString,
+  lead,
+  trail,
+}: {
+  orderString: string;
+  lead?: boolean;
+  trail?: boolean;
 })
 ```
+The `orderString` parameter takes in a specially-formatted string, which is then parsed into the images and their corresponding order.\
+The item names used here have to exactly match the name of the corresponding image in `/assets`.
+
+`>`: Simple prog right-arrow\
+`bbarkh > bbarkt > bbarkl`\
+<img width="229" height="62" alt="image" src="https://github.com/user-attachments/assets/2e5100f4-8618-4935-b650-f27dc2e4af8d" />
+
+`$`\: Indicates that item should be sold by placing it on top and marking it red\
+`virtush $ bbarkh > virtust $ bbarkt > virtusb $ bbarkb`\
+<img width="233" height="115" alt="image" src="https://github.com/user-attachments/assets/17adaa44-6368-4503-9820-d81223fbe22b" />
+
+`*`\: Used for marking other "special" items by marking them blue\
+`*ultor > rapier`\
+<img width="149" height="63" alt="image" src="https://github.com/user-attachments/assets/9c559afb-bf63-41a7-aede-c4deac8900dd" />
+
+`&`\: Groups items similarly to `$`, but without the background\
+`ayak & conflictiong`\
+<img width="65" height="115" alt="image" src="https://github.com/user-attachments/assets/f8388a39-aa90-43eb-b0ba-49a9ae6a38be" />
+
+`+`\: Replaces the right-arrow with a + icon\
+`bgs + lb`\
+<img width="141" height="61" alt="image" src="https://github.com/user-attachments/assets/806f80c2-6e0d-482e-9d84-5299faf67796" />
+
+Any of the 5 above can be combined, as shown:\
+`ayak & cgauntlets + ancestralh & ancestralt & ancestralb`\
+<img width="156" height="168" alt="image" src="https://github.com/user-attachments/assets/5d317f31-00be-445c-bc1e-b57345274356" />
+
+### Image naming scheme
+1. Pieces of armor are named after their names + `h`/`t`/`b` (head/top/bottoms).\
+Example: `torvat` for Torva platebody.
+2. For long item names such as Confliction gauntlets, we take the equipment-word and contract the name.\
+Example: `cgauntlets` for Confliction gauntlets; `bgloves` for Barrows gloves.
+3. For common abbreviations, such as `ultor` for Ultor ring and `rapier` for Ghrazi rapier, we stick with them for ease of use.
+Note: I may consider standardizing these and adding aliases instead.
