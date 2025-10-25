@@ -35,7 +35,7 @@ function formatItem(itemName: string, key: number, separator?: string) {
   return (
     <Fragment key={key}>
       <div
-        className={`flex flex-col ${
+        className={`flex flex-col items-center gap-1 ${
           overrideSeparator && key > 0
             ? "ml-[15px] mr-[15px]"
             : overrideSeparator && key == 0
@@ -55,13 +55,10 @@ function formatItem(itemName: string, key: number, separator?: string) {
                     : "bg-[#010101]/20"
                 }`}
               >
-                <a href="https://google.com/">
-                  <img
-                    src={`${IMG_DIR}/${itemName.replace(/(--|\*)/g, "")}.png`}
-                  />
-                </a>
+                <img
+                  src={`${IMG_DIR}/${itemName.replace(/(--|\*)/g, "")}.png`}
+                />
               </div>
-              <br className="block content-[''] mt-1" />
             </Fragment>
           ))
         )}
