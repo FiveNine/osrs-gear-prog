@@ -58,6 +58,7 @@ Any of the 5 above can be combined, as shown:\
 1. Pieces of armor are named after their names + `h`/`t`/`b` (head/top/bottoms).\
 Example: `torvat` for Torva platebody.
 2. For long item names such as Confliction gauntlets, we take the equipment-word and contract the name.\
-Example: `cgauntlets` for Confliction gauntlets; `bgloves` for Barrows gloves.
-3. For common abbreviations, such as `ultor` for Ultor ring and `rapier` for Ghrazi rapier, we stick with them for ease of use.
+We follow `zvambs` for similar items and use the first syllable of the equipment-word, keeping pluralization.\
+Example: `cgaunts` for Confliction gauntlets; `bgloves` for Barrows gloves.
+4. For common abbreviations, such as `ultor` for Ultor ring and `rapier` for Ghrazi rapier, we stick with them for ease of use.
 Note: I may consider standardizing these and adding aliases instead.
