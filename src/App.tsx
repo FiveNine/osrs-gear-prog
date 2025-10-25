@@ -17,7 +17,7 @@ function App() {
           trail
           orderString="botd > dpick > fang > lb & bgs > rigour > buckler "
         />
-        <Row orderString="mbook > anguish > bclaws > torm > feros" />
+        <Row orderString="mbook > anguish > bclaws > torms > feros" />
       </Section>
 
       <Section
@@ -26,7 +26,7 @@ function App() {
       >
         <Row
           trail
-          orderString="masorih > masorit > masorib > ayak > conflictiong $ torm > vw $ bclaws"
+          orderString="masorih > masorit > masorib > ayak > cgaunts $ torms > vw $ bclaws"
         />
         <Row
           trail
@@ -41,11 +41,11 @@ function App() {
       >
         <Row
           trail
-          orderString="shadow > torm > virtush > eternals > augury > virtusb > virtust"
+          orderString="shadow > torms > virtush > eternals > augury > virtusb > virtust"
         />
         <Row
           trail
-          orderString="bclaws > vw $ bclaws > magus > conflictiong > ancestralh $ virtush > ancestralb $ virtusb > ancestralt $ virtust"
+          orderString="bclaws > vw $ bclaws > magus > cgaunts > ancestralh $ virtush > ancestralb $ virtusb > ancestralt $ virtust"
         />
         <Row
           trail
@@ -65,6 +65,10 @@ function App() {
         title=""
         description="Note: Bow of Faerdhinen setups are inferior to Masori setups.\nThey should only be used by irons or temporarily while obtaining cape upgrades."
       />
+
+      <Section title="Example" description="">
+        <Row orderString="bgs + lb" />
+      </Section>
     </>
   );
 }
