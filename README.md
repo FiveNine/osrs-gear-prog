@@ -60,5 +60,5 @@ Example: `torvat` for Torva platebody.
 2. For long item names such as Confliction gauntlets, we take the equipment-word and contract the name.\
 We follow `zvambs` for similar items and use the first syllable of the equipment-word, keeping pluralization.\
 Example: `cgaunts` for Confliction gauntlets; `bgloves` for Barrows gloves.
-4. For common abbreviations, such as `ultor` for Ultor ring and `rapier` for Ghrazi rapier, we stick with them for ease of use.
+4. For common abbreviations, such as `ultor` for Ultor ring and `rapier` for Ghrazi rapier, we stick with them for ease of use.\
 Note: I may consider standardizing these and adding aliases instead.
