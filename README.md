@@ -54,7 +54,7 @@ Any of the 5 above can be combined, as shown:\
 `ayak & cgauntlets + ancestralh & ancestralt & ancestralb`\
 <img width="156" height="168" alt="image" src="https://github.com/user-attachments/assets/5d317f31-00be-445c-bc1e-b57345274356" />
 
-### Image naming scheme
+## Image naming scheme
 1. Pieces of armor are named after their names + `h`/`t`/`b` (head/top/bottoms).\
 Example: `torvat` for Torva platebody.
 2. For long item names such as Confliction gauntlets, we take the equipment-word and contract the name.\
