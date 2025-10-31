@@ -10,6 +10,14 @@ function App() {
       </div>
       <span className="textrow">October 25 2025</span>
       <Section
+        title="Minimum Requirements"
+        description="You are highly recommended to have these before starting ToA."
+      >
+        <Row orderString="zspear-- > tbp-- > swamptrident-- > dds-- > ddef-- > rpick-- > dcb-- > piety--"/>
+        <Row orderString="torso-- > fcape-- > bringi-- > dboots-- > fury-- > bgloves-- > keris-- > rpouch-- "/>
+        <Row orderString="nezzy-- > occult-- > bbarkt-- > bbarkb-- > saracapei-- > bhidet-- > bhideb-- > accumulator--"/>
+      </Section>
+      <Section
         title="Core Upgrades"
         description="Start from the left and follow the order."
       >
@@ -41,11 +49,11 @@ function App() {
       >
         <Row
           trail
-          orderString="shadow > torms > virtush > eternals > augury > virtusb > virtust"
+          orderString="shadow > torms > virtush > eternals > virtusb > virtust > bclaws"
         />
         <Row
           trail
-          orderString="bclaws > vw $ bclaws > magus > cgaunts > ancestralh $ virtush > ancestralb $ virtusb > ancestralt $ virtust"
+          orderString="vw $ bclaws > magus > cgaunts > augury > ancestralh $ virtush > ancestralb $ virtusb > ancestralt $ virtust"
         />
         <Row
           trail
@@ -65,10 +73,6 @@ function App() {
         title=""
         description="Note: Bow of Faerdhinen setups are inferior to Masori setups.\nThey should only be used by irons or temporarily while obtaining cape upgrades."
       />
-
-      <Section title="Example" description="">
-        <Row orderString="bgs + lb" />
-      </Section>
     </>
   );
 }

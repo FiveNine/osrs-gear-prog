@@ -55,7 +55,7 @@ function formatItem(itemName: string, key: number, separator?: string) {
                     : "bg-[#010101]/20"
                 }`}
               >
-                <img
+                <img className="itemIcons"
                   src={`${IMG_DIR}/${itemName.replace(/(--|\*)/g, "")}.png`}
                 />
               </div>
