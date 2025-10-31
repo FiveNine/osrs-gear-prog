@@ -8,7 +8,7 @@ function App() {
       <div className="text-[24px] font-bold fcorange">
         Tombs of Amascut Gear Progression
       </div>
-      <span className="textrow">October 25 2025</span>
+      <span className="textrow">November 1 2025</span>
       <Section
         title="Minimum Requirements"
         description="You are highly recommended to have these before starting ToA."
