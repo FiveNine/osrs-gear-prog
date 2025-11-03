@@ -8,7 +8,7 @@ function App() {
       <div className="text-[24px] font-bold fcorange">
         Tombs of Amascut Gear Progression
       </div>
-      <span className="textrow">November 1 2025</span>
+      <span className="textrow">November 4 2025</span>
       <Section
         title="Minimum Requirements"
         description="You are highly recommended to have these before starting ToA."
@@ -23,7 +23,7 @@ function App() {
       >
         <Row
           trail
-          orderString="botd > dpick > fang > lb & bgs > rigour > buckler "
+          orderString="botd > dpick > fang > lb & bgs > rigour > buckler"
         />
         <Row orderString="mbook > anguish > bclaws > torms > feros" />
       </Section>
@@ -38,9 +38,9 @@ function App() {
         />
         <Row
           trail
-          orderString="torture > rancour $ torture > virtush > virtusb > virtust > bmoonb "
+          orderString="torture > rancour $ torture > virtush > virtusb > virtust > bmoonb"
         />
-        <Row orderString="fg > prims " />
+        <Row orderString="fg > prims" />
       </Section>
 
       <Section
@@ -53,11 +53,11 @@ function App() {
         />
         <Row
           trail
-          orderString="vw $ bclaws > magus > cgaunts > augury > ancestralh $ virtush > ancestralb $ virtusb > ancestralt $ virtust"
+          orderString="vw $ bclaws > magus > cgaunts > augury > ancestralh $ virtush > ancestralb $ virtusb > bmoonb"
         />
         <Row
           trail
-          orderString="bmoonb > torture > rancour $ torture > masorih > masorit > masorib > zcb"
+          orderString="torture > rancour $ torture > masorih > masorit > masorib > zcb > ancestralt $ magus & virtust"
         />
         <Row orderString="fg > prims > avernic" />
       </Section>
@@ -66,7 +66,7 @@ function App() {
         title="Tertiary Upgrades"
         description="Do NOT sell shadow/ancestral pieces for any of these items, including the twisted bow."
       >
-        <Row orderString="atreads $ magus > tbow > torvab > torvat > torvah > zvambs" />
+        <Row orderString="atreads > tbow > torvab > torvat > torvah > zvambs" />
       </Section>
 
       <Section
