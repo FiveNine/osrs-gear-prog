@@ -13,7 +13,7 @@ function App() {
         title="Minimum Requirements"
         description="You are highly recommended to have these before starting ToA."
       >
-        <Row orderString="zspear-- > tbp-- > swamptrident-- > dds-- > ddef-- > rpick-- > dcb-- > piety--"/>
+        <Row orderString="zhasta-- > tbp-- > swamptrident-- > dds-- > ddef-- > rpick-- > dcb-- > piety--"/>
         <Row orderString="torso-- > fcape-- > bringi-- > dboots-- > fury-- > bgloves-- > keris-- > rpouch-- "/>
         <Row orderString="nezzy-- > occult-- > bbarkt-- > bbarkb-- > saracapei-- > bhidet-- > bhideb-- > accumulator--"/>
       </Section>
