@@ -1,14 +1,53 @@
 import { Fragment } from "react";
 const IMG_DIR = "src/assets";
 
+function calculateGridCols(count: number): number {
+  if (count <= 1) return 1;
+  const sqrt = Math.sqrt(count);
+  return Math.ceil(sqrt);
+};
+
+function calculateGridWidth(itemCount: number): number {
+  if (itemCount === 0) return 0;
+  if (itemCount === 1) return 50; // single item, no gap
+  const cols = calculateGridCols(itemCount);
+  return cols * 50 + (cols - 1) * 4; // 50px per item, 4px gap (gap-1)
+};
+
 function parseProg(progString: string): [string[][], number] {
   const splitString = progString
     .split(">")
     .map((x) => x.split("+").map((y) => y.trim()));
 
-  const numItems = splitString.map((x) => x.length).reduce((p, c) => p + c);
-  const width = numItems * 50 + (numItems - 1) * 30;
-  return [splitString, width];
+    let totalWidth = 0;
+  
+    splitString.forEach((itemGroup, groupIndex) => {
+      itemGroup.forEach((itemString, itemIndex) => {
+        const splitItems = itemString
+          .split("$")
+          .slice(0, 2)
+          .map((i) => i.trim().split("&").map((j) => j.trim()));
+        
+        const sellItems = splitItems[0] || [];
+        const buyItems = splitItems[1] || [];
+        
+        const sellGridWidth = calculateGridWidth(sellItems.length);
+        const buyGridWidth = calculateGridWidth(buyItems.length);
+        const itemWidth = Math.max(sellGridWidth, buyGridWidth);
+        
+        totalWidth += itemWidth;
+        
+        if (itemIndex < itemGroup.length - 1) {
+          totalWidth += 30;
+        }
+      });
+      
+      if (groupIndex < splitString.length - 1) {
+        totalWidth += 30;
+      }
+    });
+
+  return [splitString, totalWidth];
 }
 
 function formatItem(itemName: string, key: number, separator?: string) {
@@ -26,15 +65,9 @@ function formatItem(itemName: string, key: number, separator?: string) {
   const overrideSeparator = splitItems
     .flat(2)
     .map((i) => i.includes("--"))
-    .reduce((state, j) => state || j, false);
+    .reduce((state, j) => state || j);
 
   const sell = splitItems.length > 1;
-  
-  const calculateGridCols = (count: number): number => {
-    if (count <= 1) return 1;
-    const sqrt = Math.sqrt(count);
-    return Math.ceil(sqrt);
-  };
 
   const separatorImg =
     separator == "+" ? `${IMG_DIR}/plus.png` : `${IMG_DIR}/arr-right.png`;
